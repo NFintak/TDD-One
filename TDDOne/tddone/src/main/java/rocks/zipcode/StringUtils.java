@@ -15,12 +15,21 @@ public class StringUtils {
     
     public static String reverse(String str) {
         // Your implementation here
-        return null;
+        StringBuilder stringBuilder = new StringBuilder(str);
+        return stringBuilder.reverse().toString();
+        //return null;
     }
     
     public static int countOccurrences(String str, char c) {
         // Your implementation here
-        return 0;
+        int occurrences = 0;
+        for (int i = 0; i <= str.length() - 1; i++) {
+            if (str.charAt(i) == c) {
+                occurrences++;
+            }
+        }
+        return occurrences;
+        //return 0;
     }
     
     public static boolean isPalindrome(String str) {
