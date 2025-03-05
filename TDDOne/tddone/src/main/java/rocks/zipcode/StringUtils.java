@@ -34,8 +34,11 @@ public class StringUtils {
     
     public static boolean isPalindrome(String str) {
         // Your implementation here
+        StringBuilder stringBuilder = new StringBuilder(str);
+        String mirrored = stringBuilder.reverse().toString();
         // Note: Ignoring case and non-alphanumeric characters
-        return false;
+        return str.equalsIgnoreCase(mirrored);
+        //return false;
     }
 }
 
