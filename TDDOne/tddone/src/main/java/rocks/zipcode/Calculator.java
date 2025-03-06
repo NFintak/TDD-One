@@ -13,27 +13,32 @@ public class Calculator {
     
     public int add(int a, int b) {
         // Your implementation here
-        return 0;
+        return a + b;
+        //return 0;
     }
     
     public int subtract(int a, int b) {
         // Your implementation here
-        return 0;
+        return a - b;
+        //return 0;
     }
     
     public int multiply(int a, int b) {
         // Your implementation here
-        return 0;
+        return a * b;
+        //return 0;
     }
     
     public double divide(int a, int b) {
         // Your implementation here
-        return 0.0;
+        return ((double)a / b);
+        //return 0.0;
     }
     
     public double power(int base, int exponent) {
         // Your implementation here
-        return 0.0;
+        return base^exponent;
+        //return 0.0;
     }
 }
 

@@ -1,5 +1,6 @@
 package rocks.zipcode;
 import java.lang.IllegalStateException;
+import java.lang.IllegalArgumentException;
 
 /** 
  * EXERCISE 2: BankAccount
@@ -41,22 +42,33 @@ public class BankAccount {
         return balance;
         //return 0.0;
     }
-    
-    public void deposit(double amount) {
+
+
+    public void deposit(double amount) throws IllegalArgumentException {
         // Your implementation here
-        if (amount > 0) {
+        try {
             this.balance += amount;
-        } else {
-            System.out.println("Withdrawal amount must be positive");
+        } catch (Exception e) {
+            getMessage(amount);
         }
     }
     
-    public void withdraw(double amount) {
+    public void withdraw(double amount) throws IllegalArgumentException {
         // Your implementation here
-        if (amount > 0 && this.balance > amount) {
+        try {
             this.balance -= amount;
-        } else if (this.balance < amount) {
-            System.out.println();
+        } catch (Exception e) {
+            getMessage(amount);
+        }
+    }
+
+    public void getMessage(double amount) {
+        if (this.balance - amount < 0) {
+            throw new IllegalStateException("Insufficient funds");
+        } else if (this.balance - amount > this.balance) {
+            throw new IllegalArgumentException("Withdrawal amount must be positive");
+        } else if (this.balance + amount < this.balance) {
+            throw new IllegalArgumentException("Deposit amount must be positive");
         }
     }
 }
