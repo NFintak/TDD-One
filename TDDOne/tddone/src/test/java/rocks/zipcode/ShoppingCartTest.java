@@ -11,11 +11,8 @@ class ShoppingCartTest {
     // Make sure to test all functionality including:
     // - Adding and removing items
     @Test
-    void test1AddItem() {
+    public void test1AddItem() {}
 
-
-
-    }
     @Test
     void test2AddItem() {
 
