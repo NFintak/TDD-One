@@ -34,10 +34,10 @@ public class StringUtils {
     
     public static boolean isPalindrome(String str) {
         // Your implementation here
+
+        str = str.replaceAll( "[\\W]|_", "");
         StringBuilder stringBuilder = new StringBuilder(str);
         String mirrored = stringBuilder.reverse().toString();
-        mirrored.replaceAll( "[^a-zA-Z]+", "");
-        mirrored.replace(" ", "");
         // Note: Ignoring case and non-alphanumeric characters
         return str.equalsIgnoreCase(mirrored);
         //return false;

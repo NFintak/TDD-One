@@ -9,21 +9,40 @@ import static org.junit.jupiter.api.Assertions.*;
 class ShoppingCartTest {
     // TODO: Write tests for the ShoppingCart class
     private ShoppingCart shoppingCart;
+    private ShoppingCart.Item item1;
+    private ShoppingCart.Item item2;
+    private ShoppingCart.Item item3;
 
     @BeforeEach
     void setUp() {
-        //shoppingCart = new ShoppingCart();
+        item1 = new ShoppingCart.Item("Oranges", 1.75, 5);
+        item2 = new ShoppingCart.Item("Apples", 1.50, 5);
+        item3 = new ShoppingCart.Item("Cans", 2.00, 10);
+        shoppingCart = new ShoppingCart(0.09);
 
     }
     // Make sure to test all functionality including:
     // - Adding and removing items
     @Test
-    public void test1AddItem() {}
+    void test1AddItem() {
+
+    }
 
     @Test
     void test2AddItem() {
 
     }
+
+    @Test
+    void test3AddItem() {
+
+    }
+
+    @Test
+    void test4AddItem() {
+
+    }
+
     @Test
     void test1RemoveItem() {
 
