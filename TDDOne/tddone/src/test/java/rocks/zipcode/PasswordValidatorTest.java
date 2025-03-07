@@ -9,7 +9,7 @@ public class PasswordValidatorTest {
     // Test cases should include:
     // - Valid passwords
     @Test
-    public void validPasswordTest() {
+    void validPasswordTest() {
         PasswordValidator passwordTest = new PasswordValidator();
         assertTrue(passwordTest.isValid("Spr385%f"));
         assertTrue(passwordTest.isValid("pl4oCat#wtDMf7myb0op"));
@@ -19,14 +19,14 @@ public class PasswordValidatorTest {
 
     // - Passwords that are too short or too long
     @Test
-    public void passwordTooShortTest() {
+    void passwordTooShortTest() {
         PasswordValidator passwordTest = new PasswordValidator();
         assertTrue(passwordTest.isValid("1tTr|i7jfci@l5nefr"));
         assertFalse(passwordTest.isValid("Pick1e$"));
     }
 
     @Test
-    public void passwordTooLongTest() {
+   void passwordTooLongTest() {
         PasswordValidator passwordTest = new PasswordValidator();
         assertTrue(passwordTest.isValid("It7a^P?wIt50wo4"));
         assertFalse(passwordTest.isValid("j5ukir#CuwnIfp61nn@cAilT7i@"));
@@ -34,14 +34,14 @@ public class PasswordValidatorTest {
 
     // - Passwords missing uppercase, lowercase, digits, or special chars
     @Test
-    public void passwordMissingUpperTest() {
+    void passwordMissingUpperTest() {
         PasswordValidator passwordTest = new PasswordValidator();
         assertTrue(passwordTest.isValid("5adIaNfy;wPfu;wj7bf"));
         assertFalse(passwordTest.isValid("igma|ra5d||wbn@hm"));
     }
 
     @Test
-    public void passwordMissingLowerTest() {
+    void passwordMissingLowerTest() {
         PasswordValidator passwordTest = new PasswordValidator();
         assertTrue(passwordTest.isValid("n5aWSh^^da7(G@ec"));
         assertFalse(passwordTest.isValid("N5@WS#^^D@7CG@3("));
@@ -49,14 +49,14 @@ public class PasswordValidatorTest {
     }
 
     @Test
-    public void passwordMissingDigitTest() {
+    void passwordMissingDigitTest() {
         PasswordValidator passwordTest = new PasswordValidator();
         assertTrue(passwordTest.isValid("4t@kLoai5b;fb7f"));
         assertFalse(passwordTest.isValid("tOn;fp+Dp@t;Skm"));
     }
 
     @Test
-    public void passwordMissingSpecialCharTest() {
+    void passwordMissingSpecialCharTest() {
         PasswordValidator passwordTest = new PasswordValidator();
         assertTrue(passwordTest.isValid(""));
         assertFalse(passwordTest.isValid(""));
@@ -64,14 +64,14 @@ public class PasswordValidatorTest {
 
     // - Edge cases like null or empty strings
     @Test
-    public void isPasswordNullTest() {
+    void isPasswordNullTest() {
         PasswordValidator passwordTest = new PasswordValidator();
         assertTrue(passwordTest.isValid("7hi5Str;ng#asW0rd5"));
         assertFalse(passwordTest.isValid(null));
     }
 
     @Test
-    public void isPasswordEmptyTest() {
+    void isPasswordEmptyTest() {
         PasswordValidator passwordTest = new PasswordValidator();
         assertTrue(passwordTest.isValid("t#iS57r;ng#a5wOrds"));
         assertFalse(passwordTest.isValid(""));

@@ -8,6 +8,13 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class ShoppingCartTest {
     // TODO: Write tests for the ShoppingCart class
+    private ShoppingCart shoppingCart;
+
+    @BeforeEach
+    void setUp() {
+        //shoppingCart = new ShoppingCart();
+
+    }
     // Make sure to test all functionality including:
     // - Adding and removing items
     @Test
@@ -33,11 +40,12 @@ class ShoppingCartTest {
 
 
     // - Edge cases like an empty cart
-
+    //check bankaccount tests for formatting, check shoppingcart for specific exception details
 
 
 
     // - Invalid inputs (e.g., negative prices, zero quantity)
+    //check bankaccount tests for formatting, check shoppingcart for specific exception details
 
 
 

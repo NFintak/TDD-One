@@ -36,7 +36,7 @@ public class StringUtils {
         // Your implementation here
         StringBuilder stringBuilder = new StringBuilder(str);
         String mirrored = stringBuilder.reverse().toString();
-        mirrored.replace(" ", "");
+        mirrored.replaceAll( "", "");
         // Note: Ignoring case and non-alphanumeric characters
         return str.equalsIgnoreCase(mirrored);
         //return false;
