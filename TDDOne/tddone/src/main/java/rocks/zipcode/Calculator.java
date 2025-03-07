@@ -31,13 +31,13 @@ public class Calculator {
     
     public double divide(int a, int b) {
         // Your implementation here
-        return ((double)a / b);
+        return ((double)a / b); //need to add exception for /0 error
         //return 0.0;
     }
     
     public double power(int base, int exponent) {
         // Your implementation here
-        return base^exponent;
+        return Math.pow((double) base, (double) exponent);
         //return 0.0;
     }
 }
