@@ -31,6 +31,9 @@ public class Calculator {
     
     public double divide(int a, int b) {
         // Your implementation here
+        if (b == 0) {
+            throw new ArithmeticException("Cannot divide by zero");
+        }
         return ((double)a / b); //need to add exception for /0 error
         //return 0.0;
     }
