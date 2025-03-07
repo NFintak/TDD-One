@@ -46,29 +46,20 @@ public class BankAccount {
 
     public void deposit(double amount) throws IllegalArgumentException {
         // Your implementation here
-        try {
-            this.balance += amount;
-        } catch (Exception e) {
-            getMessage(amount);
+        if (this.balance + amount < this.balance) {
+            throw new IllegalArgumentException("Deposit amount must be positive");
         }
+        this.balance += amount;
+
     }
     
     public void withdraw(double amount) throws IllegalArgumentException {
         // Your implementation here
-        try {
-            this.balance -= amount;
-        } catch (Exception e) {
-            getMessage(amount);
-        }
-    }
-
-    public void getMessage(double amount) {
         if (this.balance - amount < 0) {
             throw new IllegalStateException("Insufficient funds");
         } else if (this.balance - amount > this.balance) {
             throw new IllegalArgumentException("Withdrawal amount must be positive");
-        } else if (this.balance + amount < this.balance) {
-            throw new IllegalArgumentException("Deposit amount must be positive");
         }
+        this.balance -= amount;
     }
 }
