@@ -16,7 +16,6 @@ public class BankAccount {
     private String accountNumber;
     private String ownerName;
     private double balance = 0.0;
-    Exception exception = new Exception();
 
     public BankAccount(String accountNumber, String ownerName) {
         // Your implementation here
@@ -44,7 +43,7 @@ public class BankAccount {
     }
 
 
-    public void deposit(double amount) throws IllegalArgumentException {
+    public void deposit(double amount) {
         // Your implementation here
         if (this.balance + amount < this.balance) {
             throw new IllegalArgumentException("Deposit amount must be positive");
@@ -53,7 +52,7 @@ public class BankAccount {
 
     }
     
-    public void withdraw(double amount) throws IllegalArgumentException {
+    public void withdraw(double amount) {
         // Your implementation here
         if (this.balance - amount < 0) {
             throw new IllegalStateException("Insufficient funds");

@@ -36,7 +36,8 @@ public class StringUtils {
         // Your implementation here
         StringBuilder stringBuilder = new StringBuilder(str);
         String mirrored = stringBuilder.reverse().toString();
-        mirrored.replaceAll( "", "");
+        mirrored.replaceAll( "[^a-zA-Z]+", "");
+        mirrored.replace(" ", "");
         // Note: Ignoring case and non-alphanumeric characters
         return str.equalsIgnoreCase(mirrored);
         //return false;

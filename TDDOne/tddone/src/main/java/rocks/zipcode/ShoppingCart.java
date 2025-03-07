@@ -22,7 +22,16 @@ public class ShoppingCart {
     public void addItem(Item item) {
         items.add(item);
     }
-    
+
+    //Item newItem = new Item (...);
+    //scan.addItem(newItem);
+    //Item expected = s.getItem(scan.getItemCount() - 1);
+    //assertequal(expected, newItem)
+
+    public Item getItem(int idx) { //added during TDD 2 lecture
+        return items.get(idx);
+    }
+
     public void removeItem(Item item) {
         items.remove(item);
     }
