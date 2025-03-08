@@ -162,7 +162,7 @@ class ShoppingCartTest {
     @Test
     public void testNegativeQuantity() {
         Exception exception = assertThrows(IllegalArgumentException.class, () -> {
-            ShoppingCart.Item item3 = new ShoppingCart.Item("Soda", 2.00, 0);
+            ShoppingCart.Item item = new ShoppingCart.Item("Soda", 2.00, 0);
         });
 
         String expectedMessage = "Quantity must be positive";
@@ -171,7 +171,15 @@ class ShoppingCartTest {
         assertTrue(actualMessage.contains(expectedMessage));
     }
 
+    @Test
+    public void testSetQuantityZero() {
+        Exception exception = assertThrows(IllegalArgumentException.class, () -> {
+            item1.setQuantity(0);
+        });
 
+        String expectedMessage = "Quantity must be positive";
+        String actualMessage = exception.getMessage();
 
-
+        assertTrue(actualMessage.contains(expectedMessage));
+    }
 }
