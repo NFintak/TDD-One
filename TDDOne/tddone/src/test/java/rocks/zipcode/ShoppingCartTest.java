@@ -59,7 +59,7 @@ class ShoppingCartTest {
         //given
         shoppingCart.addItem(item1);
         shoppingCart.addItem(item2);
-        shoppingCart.addItem(item2);
+        shoppingCart.addItem(item1);
         //when
         shoppingCart.removeItem(item1);
         //then
@@ -71,9 +71,9 @@ class ShoppingCartTest {
     public void test2RemoveItem() {
         //given
         shoppingCart.addItem(item1);
+        shoppingCart.addItem(item2);
         shoppingCart.addItem(item1);
-        shoppingCart.addItem(item1);
-        shoppingCart.addItem(item1);
+        shoppingCart.addItem(item2);
         //when
         shoppingCart.removeItem(item1);
         //then
@@ -133,17 +133,43 @@ class ShoppingCartTest {
     }
 
     // - Edge cases like an empty cart
-    //check bankaccount tests for formatting, check shoppingcart for specific exception details
     @Test
     public void test1emptyCart() {
         //given
+        item1.setQuantity(3);
+        shoppingCart.addItem(item1);
         //when
+        shoppingCart.clearCart();
         //then
+        assertEquals(0, shoppingCart.getItemCount());
+        assertEquals(0.00, shoppingCart.getTotal());
     }
 
 
     // - Invalid inputs (e.g., negative prices, zero quantity)
-    //check bankaccount tests for formatting, check shoppingcart for specific exception details
+    @Test
+    public void testNegativePrice() {
+        Exception exception = assertThrows(IllegalArgumentException.class, () -> {
+            ShoppingCart.Item item3 = new ShoppingCart.Item("Soda", -0.50, 1);
+        });
+
+        String expectedMessage = "Price cannot be negative";
+        String actualMessage = exception.getMessage();
+
+        assertTrue(actualMessage.contains(expectedMessage));
+    }
+
+    @Test
+    public void testNegativeQuantity() {
+        Exception exception = assertThrows(IllegalArgumentException.class, () -> {
+            ShoppingCart.Item item3 = new ShoppingCart.Item("Soda", 2.00, 0);
+        });
+
+        String expectedMessage = "Quantity must be positive";
+        String actualMessage = exception.getMessage();
+
+        assertTrue(actualMessage.contains(expectedMessage));
+    }
 
 
 
